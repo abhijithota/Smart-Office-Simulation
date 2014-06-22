@@ -1,0 +1,14 @@
+
+public class SwipeMachine {
+
+	public SwipeMachine() {
+		System.out.println("Inside SwipeMachine.\n");
+		getID();
+	}
+	
+	public void getID()
+	{
+		System.out.println("Enter Your ID");
+	}
+
+}

@@ -1,0 +1,15 @@
+import java.io.*;
+
+public class DatabaseManager {
+
+	public DatabaseManager(Boolean labOrEntry, String credential) {
+		System.out.println("Inside DatabaseManager.\n");
+		if(labOrEntry == 1)
+		{
+			
+		}
+	}
+	
+	
+
+}

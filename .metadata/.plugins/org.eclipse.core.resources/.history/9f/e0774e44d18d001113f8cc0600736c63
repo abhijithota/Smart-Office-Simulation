@@ -1,0 +1,42 @@
+
+public class Door implements Runnable{
+	public boolean door = false;
+	public boolean person =  false;
+
+	@Override
+	public void run() {
+		while(true) {
+			if(person) {
+				openDoor();
+				while(person)
+				{
+					try {
+						System.out.println("Door will close in 5 seconds!!");
+						Thread.sleep(5000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+				closeDoor();
+			}
+		}
+		
+	}
+	
+	public void openDoor()
+	{
+		if(!door) {
+			System.out.println("Door Opened");
+			door = true;
+		}
+	}
+	
+	public void closeDoor()
+	{
+		if(door) {
+			System.out.println("Door Closed");
+			door = false;
+		}
+	}
+}

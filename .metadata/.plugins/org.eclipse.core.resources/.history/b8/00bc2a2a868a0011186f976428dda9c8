@@ -1,0 +1,9 @@
+
+public class CubeEquipments {
+	
+	public CubeEquipments() {
+		System.out.println("Inside Cube Equipments.All Equipments Switched ON.");
+		occupied = true;
+	}
+
+}

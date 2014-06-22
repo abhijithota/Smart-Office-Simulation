@@ -1,0 +1,40 @@
+
+public class Door implements Runnable{
+	public boolean door = false;
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public void openDoor()
+	{
+		if(!door) {
+			System.out.println("Door Opened");
+			door = true;
+		}
+	}
+	
+	public void closeDoor()
+	{
+		if(door) {
+			System.out.println("Door Closed");
+			door = false;
+		}
+	}
+	
+	public void personDetected()
+	{
+		openDoor();
+		try {
+			Thread.sleep(5000);
+			System.out.println("Door will close in 5 seconds!!");
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		closeDoor();
+	}
+
+}

@@ -1,0 +1,10 @@
+
+public class Sensor {
+	Door door;
+
+	public Sensor() {
+		super();
+		door = new Door();
+	}
+
+}

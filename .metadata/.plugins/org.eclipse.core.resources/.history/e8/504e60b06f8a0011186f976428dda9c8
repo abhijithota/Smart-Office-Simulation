@@ -1,0 +1,9 @@
+
+public class Alarm {
+
+	public Alarm() {
+		System.out.printl("Inside Alarm.");
+		System.out.printl("Alarm Raised.");
+	}
+
+}

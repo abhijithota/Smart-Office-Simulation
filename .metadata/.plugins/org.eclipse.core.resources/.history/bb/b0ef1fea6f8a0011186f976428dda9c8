@@ -1,0 +1,29 @@
+import java.io.*;
+
+
+public class SwipeMachine {
+
+	public SwipeMachine(Boolean labOrEntry) {
+		System.out.println("Inside SwipeMachine.\nPlease Input your credentials:");
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String userName = null;
+		try {
+			userName = br.readLine();
+		}catch(IOException ioe)
+		{
+			System.out.println("IO Error while reading!");
+			System.exit(1);
+		}
+		DatabaseManager db = new DatabaseManager();
+		if(db.validate(labOrEntry, userName))
+		{
+			System.out.println("Valid Credentials! Entry Granted!");
+		}
+		else
+		{
+			System.out.println("Invalid Credentials! Raise ALARM!");
+		}
+		
+	}
+
+}

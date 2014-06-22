@@ -1,0 +1,9 @@
+
+public class SwipeMachine {
+
+	public SwipeMachine() {
+		super();
+		System.out.println("Inside SwipeMachine.\n");
+	}
+
+}

@@ -1,0 +1,9 @@
+
+public class CubeEquipments {
+	
+	public public CubeEquipments() {
+		System.out.println("Inside Occupance Monitor.Person Detected!!Turn ON Signal sent to CubeEquipments.");
+		occupied = true;
+	}
+
+}

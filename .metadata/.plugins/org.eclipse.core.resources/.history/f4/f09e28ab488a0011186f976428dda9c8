@@ -1,0 +1,21 @@
+
+public class SmartOffice {
+	private int choice;
+	private SwipeMachine swipeMachine;
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		while(true)
+		{
+			System.out.println("Enter Your choice");
+			
+			//Code for invoking Entry System
+			swipeMachine = new SwipeMachine;
+			
+		}
+	}
+
+}

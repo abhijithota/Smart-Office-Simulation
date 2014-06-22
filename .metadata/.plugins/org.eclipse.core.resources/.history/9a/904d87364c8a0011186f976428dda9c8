@@ -1,0 +1,21 @@
+import java.io.*;
+
+public class DatabaseManager {
+	private String FileName;
+
+	public DatabaseManager() {
+		System.out.println("Inside DatabaseManager.\n");
+	}
+	
+	public Boolean validate(Boolean labOrEntry, String Credential)
+	{
+		if(labOrEntry)
+		{
+			FileName = "Entry.txt";
+		}
+		return 1;
+	}
+	
+	
+
+}

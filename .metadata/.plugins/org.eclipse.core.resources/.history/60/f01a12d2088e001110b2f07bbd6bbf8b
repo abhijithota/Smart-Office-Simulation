@@ -1,0 +1,52 @@
+import java.io.*;
+import java.util.StringTokenizer;
+
+public class DatabaseManager {
+	private String FileName;
+
+	public DatabaseManager() {
+		System.out.println("Inside DatabaseManager.");
+	}
+	
+	public Boolean validate(Boolean labOrEntry, String credential)
+	{
+		Boolean result = false;
+		if(labOrEntry)
+		{
+			FileName = "Entry.txt";
+			System.out.println("Checking credentials against Entry Database.");
+		}
+		else
+		{
+			FileName = "Lab.txt";
+			System.out.println("Checking credentials against Lab Database.");
+		}
+		try{
+				FileInputStream fstream = new FileInputStream(FileName);
+				DataInputStream in = new DataInputStream(fstream);
+		        BufferedReader br = new BufferedReader(new InputStreamReader(in));
+				String strLine;
+				while ((strLine = br.readLine()) != null) 	{
+					StringTokenizer idName = new StringTokenizer(strLine, "\t");
+					if(idName.nextToken().equalsIgnoreCase(credential)) {
+						result = true;
+						if(labOrEntry)
+						{
+							try {
+								BufferedWriter out = new BufferedWriter(new FileWriter("Record.txt", true));
+								out.write("aString");
+								out.close();
+								} catch (IOException e) {}
+						}
+					}
+			}
+				in.close();
+			}catch (Exception e){//Catch exception if any
+				System.err.println("Error: " + e.getMessage());
+			}
+		return result;
+	}
+	
+	
+
+}

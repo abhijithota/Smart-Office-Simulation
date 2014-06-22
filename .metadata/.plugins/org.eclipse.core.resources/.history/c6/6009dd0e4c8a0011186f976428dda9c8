@@ -1,0 +1,16 @@
+import java.io.*;
+
+public class DatabaseManager {
+
+	public DatabaseManager() {
+		System.out.println("Inside DatabaseManager.\n");
+	}
+	
+	public Boolean validate(Boolean labOrEntry, String Credential)
+	{
+		return 1;
+	}
+	
+	
+
+}

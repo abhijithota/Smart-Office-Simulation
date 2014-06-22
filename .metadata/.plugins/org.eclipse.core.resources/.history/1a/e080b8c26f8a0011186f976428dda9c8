@@ -1,0 +1,10 @@
+
+public class Alarm {
+	public boolean alarm;
+
+	public Alarm() {
+		System.out.println("Inside Alarm.");
+		System.out.println("Alarm Raised.");
+	}
+
+}

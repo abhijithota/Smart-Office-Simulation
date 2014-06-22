@@ -1,0 +1,41 @@
+import java.io.*;
+
+public class DatabaseManager {
+	private String FileName;
+
+	public DatabaseManager() {
+		System.out.println("Inside DatabaseManager.");
+	}
+	
+	public Boolean validate(Boolean labOrEntry, String credential)
+	{
+		Boolean result = false;
+		if(labOrEntry)
+		{
+			FileName = "Entry.txt";
+			System.out.println("Checking credentials against Entry Database.");
+		}
+		else
+		{
+			FileName = "Lab.txt";
+			System.out.println("Checking credentials against Lab Database.");
+		}
+		try{
+				FileInputStream fstream = new FileInputStream(FileName);
+				DataInputStream in = new DataInputStream(fstream);
+		        BufferedReader br = new BufferedReader(new InputStreamReader(in));
+				String strLine;
+				while ((strLine = br.readLine()) != null) 	{
+					if(strLine.equalsIgnoreCase(credential))
+						result = true;
+				}
+				in.close();
+			}catch (Exception e){//Catch exception if any
+				System.err.println("Error: " + e.getMessage());
+			}
+		return result;
+	}
+	
+	
+
+}

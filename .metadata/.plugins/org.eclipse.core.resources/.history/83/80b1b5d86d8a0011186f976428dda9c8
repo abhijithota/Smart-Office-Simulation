@@ -1,0 +1,14 @@
+
+public class SwipeMachine {
+
+	public SwipeMachine(Boolean labOrEntry) {
+		System.out.println("Inside SwipeMachine.\n");
+		getID();
+	}
+	
+	public void getID()
+	{
+		System.out.println("SwipeMachine:Enter Your ID:");
+	}
+
+}

@@ -1,0 +1,114 @@
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+
+public class Light extends JFrame implements ActionListener{
+	
+	private Boolean projector = false;
+	private JPanel lightPanel, controlPanel;
+	JLabel lightLabel[], displayCount, projectorLabel;
+	ImageIcon onLight, offLight;
+	private int count, onLights;
+	private JButton increment, decrement, projectorButton;
+	
+	
+	public Light() {
+		userInterface();
+	}
+	
+	public void userInterface()
+	{
+		count = 0;
+		onLights = 0;
+		increment = new JButton("+");
+		decrement = new JButton("-");
+		projectorLabel = new JLabel("Projector OFF");
+		projectorButton = new JButton("Projector Button");
+		displayCount = new JLabel(count+"");
+		lightPanel = new JPanel();
+		controlPanel = new JPanel();
+		lightLabel = new JLabel[5];
+		onLight = new ImageIcon("Light_ON.png");
+		offLight = new ImageIcon("Light_OFF.png");
+		for(int i = 0; i < 5; i++)
+		{
+			lightLabel[i] = new JLabel();
+			lightLabel[i].setIcon(offLight);
+			lightPanel.add(lightLabel[i]);
+		}
+		lightPanel.add(projectorLabel);
+		controlPanel.add(projectorButton);controlPanel.add(decrement);controlPanel.add(displayCount); controlPanel.add(increment);
+		this.setLayout(new FlowLayout());
+		this.add(controlPanel);
+		this.add(lightPanel);
+		decrement.addActionListener(this); increment.addActionListener(this);projectorButton.addActionListener(this);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		if(arg0.getSource() == decrement)
+		{
+			if(count == 0)
+			{
+				
+			}
+			else
+			{
+				count--;
+			}
+		}
+		else if(arg0.getSource() == increment)
+		{
+			if(count == 16)
+			{
+				
+			}
+			else
+			{
+				count++;
+			}
+		}
+		else if(arg0.getSource() == projectorButton)
+		{
+			if(projector) {
+				projector = false;
+				projectorLabel.setText("Projector OFF");
+			}
+			else {
+				projector = true;
+				projectorLabel.setText("Projector ON");
+			}
+		}
+		displayCount.setText(count+"");
+		
+		if(count == 0)
+		{
+			lightLabel[0].setIcon(offLight);
+		}
+		else
+		{
+			onLights =  (int)count/3 + 1;
+			if(onLights < 6){
+				for(int i = 0; i < onLights; i++) 
+						lightLabel[i].setIcon(onLight);
+				for(int j = onLights; j < 5; j++)
+					lightLabel[j].setIcon(offLight);
+			}
+			if(projector) {
+				lightLabel[4].setIcon(offLight);
+			}
+			else if(!projector && count > 12)
+			{
+				lightLabel[4].setIcon(onLight);
+			}
+		}
+	}
+
+}

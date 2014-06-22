@@ -1,0 +1,9 @@
+
+public class OccupancyMonitor {
+	public Boolean occupied = false;
+
+	public OccupancyMonitor() {
+		occupied = true;
+	}
+
+}

@@ -1,0 +1,8 @@
+
+public class Gate {
+
+	private boolean employeeGate = false;
+	private boolean visitorGate = false;
+	
+	
+}

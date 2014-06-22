@@ -1,0 +1,15 @@
+
+public class Gate {
+
+	private boolean employeeGate = false;
+	private boolean visitorGate = false;
+	
+	public void openEmployeeGate()
+	{
+		if(!employeeGate) {
+			System.out.println("Employee Parking Gate Opened!!");
+			employeeGate = true;
+		}
+	}
+	
+}

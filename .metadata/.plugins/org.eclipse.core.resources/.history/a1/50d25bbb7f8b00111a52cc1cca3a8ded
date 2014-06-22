@@ -1,0 +1,41 @@
+import java.io.*;
+
+public class SmartOffice {
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		while(true)
+		{
+			System.out.println("Enter Your choice\n1. Entry System\n2. Lab System\n3. Cube System\n4. Door System");
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+			String choice = "0";
+			try {
+				choice = br.readLine();
+			}catch(IOException ioe)
+			{
+				System.out.println("IO Error while reading!");
+				System.exit(1);
+			}
+			switch(Integer.parseInt(choice)){
+				case 1:										//Choice Entry
+					new SwipeMachine(true);
+					break;
+				case 2:										//Choice Lab
+					new SwipeMachine(false);
+					break;
+				case 3:										//Choice Lab
+					new OccupancyMonitor();
+					break;
+				case 4:										//Choice Lab
+					new Sensor();
+					break;
+				default:
+					break;
+			}
+			
+		}
+	}
+
+}

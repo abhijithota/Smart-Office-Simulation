@@ -1,0 +1,10 @@
+
+public class OccupancyMonitor {
+	public Boolean occupied = false;
+
+	public OccupancyMonitor() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+}

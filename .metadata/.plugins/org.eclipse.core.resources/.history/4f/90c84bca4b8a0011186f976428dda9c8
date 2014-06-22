@@ -1,0 +1,11 @@
+import java.io.*;
+
+public class DatabaseManager {
+
+	public DatabaseManager(Boolean labOrEntry) {
+		System.out.println("Inside DatabaseManager.\n");
+	}
+	
+	
+
+}

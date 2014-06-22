@@ -1,0 +1,12 @@
+
+public class Sensor {
+	Door door;
+
+	public Sensor() {
+		super();
+		door = new Door();
+		Thread t = new Thread(door);
+		t.start();
+	}
+
+}
